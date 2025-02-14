@@ -21,31 +21,36 @@ A question-answering chatbot specialized in financial domain queries, built by f
 - Optimized for Indian financial sector
 
 ## 🛠️ Installation
+```bash
 git clone https://github.com/your-username/financial-chatbot.git
 cd financial-chatbot
 pip install -r requirements.txt
+```
 
-📁**Requirements**
+## 📁 Requirements
+```text
 transformers==4.40.2
 datasets==2.19.0
 gradio==4.27.0
 accelerate==0.29.3
 bitsandbytes==0.43.1
 peft==0.11.1
+```
 
-🚀**Usage**
+## 🚀 Usage
 Run the chatbot interface:
-
+```bash
 python app.py
+```
 Access via Gradio URL
 
-📊**Dataset**
-Sources: Moneycontrol, Economic Times, 1OK-Financial QA
+## 📊 Dataset
+**Sources:** Moneycontrol, Economic Times
+
+**Size:** 10,000 Q&A pairs
 
 **Structure:**
-
-json
-Copy
+```json
 {
   "question": "What is NVIDIA's current market strategy?",
   "answer": "NVIDIA's platform strategy brings together hardware...",
@@ -53,70 +58,65 @@ Copy
   "ticker": "NVDA",
   "filing": "2023_10K"
 }
-Size: 10,000 Q&A pairs
+```
 
-🤖 **Model Training**
-Base Model: google/flan-t5-small
+## 🤖 Model Training
+**Base Model:** `google/flan-t5-small`
 
 **Fine-tuning Parameters:**
+- **Learning Rate:** 2e-5
+- **Batch Size:** 4
+- **Epochs:** 5
+- **Quantization:** 4-bit
 
-Learning Rate: 2e-5
-Batch Size: 4
-Epochs: 5
-Quantization: 4-bit
-LoRA Configuration:
-Rank: 8
-Alpha: 32
-Dropout: 0.1
+**LoRA Configuration:**
+- **Rank:** 8
+- **Alpha:** 32
+- **Dropout:** 0.1
 
-📈 **Evaluation**
-Metric	Score
-ROUGE-1	0.449
-ROUGE-2	0.346
-ROUGE-L	0.442
-Inference Time	2-8s
+## 📈 Evaluation
+| Metric   | Score |
+|----------|-------|
+| ROUGE-1  | 0.449 |
+| ROUGE-2  | 0.346 |
+| ROUGE-L  | 0.442 |
+| Inference Time | 2-8s |
 
-🖥️ **Interface**
+## 🖥️ Interface
 Gradio Interface
 
-🧠 **Model Architecture**
+## 🧠 Model Architecture
+```mermaid
 graph TD
     A[User Question] --> B(Input Encoding)
     B --> C[Fine-Tuned Flan-T5]
     C --> D[Response Generation]
     D --> E[Output Decoding]
     E --> F[Formatted Answer]
-    
-🚧 **Challenges**
+```
 
-Dataset cleaning from web-scraped sources
-Quantization/LoRA implementation
-Response time optimization
-Handling financial terminology
+## 🚧 Challenges
+- Dataset cleaning from web-scraped sources
+- Quantization/LoRA implementation
+- Response time optimization
+- Handling financial terminology
 
-📜 **License**
-MIT License - See LICENSE
+## 📜 License
+MIT License - See [LICENSE](LICENSE)
 
-🙏 **Acknowledgments**
-Hugging Face Transformers Library
-Google for Flan-T5 model
-Moneycontrol/Economic Times for data
+## 🙏 Acknowledgments
+- Hugging Face Transformers Library
+- Google for Flan-T5 model
+- Moneycontrol/Economic Times for data
 
-📧 **Contact:**
-Anuj Yadav - yadav.anuj051120@gmail.com
+## 📧 Contact
+**Anuj Yadav** - yadav.anuj051120@gmail.com
 
-**Key elements included:**
-1. Project metadata and badges
-2. Clear installation/usage instructions
-3. Dataset and model architecture details
-4. Evaluation metrics
-5. Visual hierarchy with emojis
-6. Mermaid diagram for architecture
-7. License and contact information
-
-**To use this:**
-1. Save as `README.md`
-2. Replace placeholder values (your-username, contact info, etc.)
-3. Add actual interface screenshot
-4. Update evaluation metrics with your final results
-5. Add any additional implementation details specific to your project
+---
+### **How to Use This README:**
+1. Replace placeholder values (`your-username`, `model-name`, etc.)
+2. Add actual interface screenshot URL
+3. Update evaluation metrics with your final results
+4. Verify package versions match your environment
+5. Add any project-specific implementation details
+6. Include a proper LICENSE file in your repository
